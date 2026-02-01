@@ -1,0 +1,45 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+*.so
+*.egg-info/
+.venv/
+venv/
+env/
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Node / Frontend
+front/node_modules/
+front/.next/
+front/dist/
+front/build/
+
+# OS / Editors
+.DS_Store
+Thumbs.db
+*.swp
+*.swo
+.idea/
+.vscode/
+
+# Env files (secrets, local config)
+.env
+.env.*
+!.env.example
+
+# Logs and data
+*.log
+logs/
+data/
+backend/data/
+
+# Local services state
+docker-data/
+
+# Allow tracked labeling data in experiments
+!experiments/data/
+!experiments/data/**
+

@@ -1,0 +1,34 @@
+services:
+  triton:
+    container_name: triton_server
+    build:
+      context: .
+      dockerfile: docker/triton/Dockerfile
+    volumes:
+      - ./model_repository:/model_repository
+      - ./models:/app/models
+      - /home/ubuntu/diabert/dataset/crops_of_every_tool/Кропнутые инструменты все:/data/gallery:ro
+      - /home/ubuntu/diabert/dataset/predrazmetka_dashi/lct_dino3_out/run_009:/data/checkpoints/dino3:ro
+      - /home/ubuntu/.cache/huggingface:/root/.cache/huggingface
+    ports:
+      - 1339:8000
+      - 1340:8001
+      - 1341:8002
+    shm_size: '1500m'
+    environment:
+      - OBJECT_DETECTOR_DEBUG=0
+      - HF_HOME=/root/.cache/huggingface
+      - TRANSFORMERS_CACHE=/root/.cache/huggingface
+    deploy:
+      resources:
+        reservations:
+          devices:
+            - driver: nvidia
+              count: 1
+              capabilities: [gpu]
+    networks:
+      - shared_network
+
+networks:
+    shared_network:
+        external: true

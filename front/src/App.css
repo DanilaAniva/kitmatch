@@ -1,0 +1,1084 @@
+/* Импорт шрифта */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap');
+
+/* существующие стили */
+#root {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+/* Стили для старой страницы */
+/* Общий контейнер */
+.app {
+  font-family: 'Inter', Roboto, Arial, sans-serif;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: hsl(198, 12%, 61%);
+  background-image: url("/assets/concrete.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  padding: 20px;
+}
+
+/* Карточка старой страницы */
+.card {
+  width: 100%;
+  max-width: 1000px;
+  height: 80vh;
+  display: flex;
+  background: rgba(192, 216, 214, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(14, 12, 12, 0.2);
+  overflow: hidden;
+  backdrop-filter: blur(16px);
+}
+
+/* Левая зона старой страницы */
+.left {
+  flex: 1;
+  border-right: 1px solid #e5e7eb;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.dropArea {
+  flex: 1;
+  border: 2px dashed #94a3b8;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  background: #f8fafc;
+  transition: background 0.3s, border-color 0.3s;
+  position: relative;
+}
+
+.dropArea:hover {
+  border-color: #3b82f6;
+  background: #f1f5f9;
+}
+
+.placeholder {
+  text-align: center;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.selectButton {
+  margin-top: 12px;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: 1px solid #cbd5e1;
+  background: #fff;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.selectButton:hover {
+  background: #3b82f6;
+  color: #fff;
+  border-color: #3b82f6;
+}
+
+.preview {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.helpText {
+  font-size: 13px;
+  color: #475569;
+}
+
+.right {
+  width: 340px;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+}
+
+.toolsBox {
+  flex: 1;
+  border: 1px solid #64748b;
+  border-radius: 12px;
+  padding: 16px;
+  overflow-y: auto;
+  min-height: 120px;
+  background: #f9fafb;
+}
+
+.list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.listItem {
+  margin-bottom: 8px;
+  font-size: 14px;
+  color: #1e293b;
+}
+
+.buttonsRow {
+  margin-top: 16px;
+  display: flex;
+  gap: 12px;
+}
+
+.button {
+  flex: 1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  background: #3b82f6;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 500;
+  transition: background 0.3s;
+}
+
+.button:hover {
+  background: #2563eb;
+}
+
+.backendInfo {
+  margin-top: 20px;
+  color: #475569;
+  font-size: 13px;
+  line-height: 1.4;
+}
+
+.apiExample {
+  font-size: 12px;
+  margin-top: 4px;
+  color: #334155;
+}
+
+.error {
+  color: #ef4444;
+  margin-top: 8px;
+}
+
+.fileInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.empty {
+  color: #64748b;
+  font-size: 14px;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* ============================================ */
+/* ОБЩИЕ СТИЛИ ДЛЯ ЛОГОТИПА ЛЦТ */
+/* ============================================ */
+
+/* Контейнер логотипа ЛЦТ для всех страниц */
+.lct-logo-bottom {
+  margin-top: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Сам логотип ЛЦТ для всех страниц */
+.lct-logo {
+  width: 200px; /* Основной размер для десктопа */
+  height: auto;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.lct-logo:hover {
+  opacity: 0.8;
+  transform: scale(1.05);
+}
+
+/* ============================================ */
+/* НОВЫЕ СТИЛИ ДЛЯ ГЛАВНОГО МЕНЮ В СТИЛЕ АЭРОФЛОТА */
+/* ============================================ */
+
+/* Глобальные стили для body */
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Контейнер главного меню */
+.main-menu-app {
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #475667 0%, #5a6b7d 100%);
+  color: #ffffff;
+}
+
+/* Карточка главного меню */
+.main-menu-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  padding: 40px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  max-width: 500px;
+  width: 100%;
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-menu-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Логотип Аэрофлота */
+.aeroflot-logo {
+  width: 120px;
+  height: auto;
+  margin-bottom: 20px;
+  filter: brightness(0) invert(1);
+}
+
+/* Альтернативный текстовый логотип */
+.aeroflot-text-logo {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #F85A40;
+  margin-bottom: 10px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Заголовок */
+.main-title {
+  font-size: 2.2rem;
+  font-weight: 500;
+  margin-bottom: 10px;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Подзаголовок */
+.subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+/* Контейнер кнопок меню */
+.menu-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  margin-top: 20px;
+  width: 100%;
+}
+
+/* Ссылки меню */
+.menu-link {
+  text-decoration: none;
+  width: 100%;
+}
+
+/* Кнопки меню */
+.menu-button {
+  width: 100%;
+  padding: 16px 24px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #F85A40 0%, #ff6b50 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(248, 90, 64, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.menu-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.menu-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(248, 90, 64, 0.4);
+  background: linear-gradient(135deg, #ff6b50 0%, #F85A40 100%);
+}
+
+.menu-button:hover::before {
+  left: 100%;
+}
+
+.menu-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(248, 90, 64, 0.3);
+}
+
+/* Анимация появления */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.main-menu-card {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.menu-button {
+  animation: fadeInUp 0.8s ease-out;
+}
+
+.menu-button:nth-child(1) {
+  animation-delay: 0.2s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.menu-button:nth-child(2) {
+  animation-delay: 0.4s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+/* ============================================ */
+/* СТИЛИ ДЛЯ СТРАНИЦЫ ОБРАБОТКИ ИЗОБРАЖЕНИЙ */
+/* ============================================ */
+
+/* Заменяем старые стили на новые в стиле Аэрофлота */
+.processing-app {
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #475667 0%, #5a6b7d 100%);
+  color: #ffffff;
+}
+
+.processing-card {
+  width: 100%;
+  max-width: 1200px;
+  min-height: 70vh;
+  display: flex;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.processing-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+.processing-left {
+  flex: 1;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.processing-dropArea {
+  flex: 1;
+  border: 3px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  min-height: 300px;
+}
+
+.processing-dropArea:hover {
+  border-color: #F85A40;
+  background: rgba(248, 90, 64, 0.1);
+  transform: scale(1.02);
+}
+
+.processing-dropArea:active {
+  transform: scale(0.98);
+}
+
+.processing-placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  pointer-events: none;
+}
+
+.processing-placeholder p {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.processing-placeholder p:first-child {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.processing-placeholder p:last-child {
+  color: #F85A40;
+  font-weight: 500;
+}
+
+.processing-preview {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+}
+
+.processing-helpText {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
+  padding: 12px 16px;
+  border-radius: 8px;
+  text-align: center;
+}
+
+.processing-right {
+  width: 400px;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.processing-right h3 {
+  margin: 0 0 20px 0;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.processing-toolsBox {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  overflow-y: auto;
+  min-height: 200px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+}
+
+.processing-list {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.processing-listItem {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+}
+
+.processing-buttonsRow {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+}
+
+.processing-button {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #F85A40 0%, #ff6b50 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(248, 90, 64, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.processing-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.processing-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(248, 90, 64, 0.4);
+  background: linear-gradient(135deg, #ff6b50 0%, #F85A40 100%);
+}
+
+.processing-button:hover::before {
+  left: 100%;
+}
+
+.processing-button:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(248, 90, 64, 0.3);
+}
+
+.processing-backendInfo {
+  margin-top: 20px;
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 12px;
+  line-height: 1.4;
+  background: rgba(255, 255, 255, 0.05);
+  padding: 12px;
+  border-radius: 8px;
+}
+
+.processing-apiExample {
+  font-size: 11px;
+  margin-top: 4px;
+  color: rgba(255, 255, 255, 0.5);
+  font-family: monospace;
+}
+
+.processing-error {
+  color: #ff6b6b;
+  margin-top: 12px;
+  padding: 8px;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 6px;
+  border-left: 3px solid #ff6b6b;
+}
+
+.processing-fileInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.processing-empty {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  text-align: center;
+  padding: 20px 0;
+  font-style: italic;
+}
+
+/* ============================================ */
+/* СТИЛИ ДЛЯ СТРАНИЦЫ ОБРАБОТКИ АРХИВОВ */
+/* ============================================ */
+
+.batch-app {
+  font-family: 'Roboto', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: linear-gradient(135deg, #475667 0%, #5a6b7d 100%);
+  color: #ffffff;
+}
+
+.batch-card {
+  width: 100%;
+  max-width: 1000px;
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 20px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.batch-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+}
+
+/* Секция загрузки */
+.batch-upload-section {
+  padding: 40px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.batch-title {
+  font-size: 2rem;
+  font-weight: 500;
+  margin: 0 0 10px 0;
+  color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.batch-subtitle {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 30px;
+  line-height: 1.5;
+}
+
+.batch-dropArea {
+  border: 3px dashed rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 40px 20px;
+  background: rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease;
+  position: relative;
+  cursor: pointer;
+  min-height: 200px;
+  margin-bottom: 20px;
+}
+
+.batch-dropArea:hover {
+  border-color: #F85A40;
+  background: rgba(248, 90, 64, 0.1);
+  transform: scale(1.02);
+}
+
+.batch-dropArea:active {
+  transform: scale(0.98);
+}
+
+.batch-placeholder {
+  text-align: center;
+  color: rgba(255, 255, 255, 0.8);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1.6;
+  pointer-events: none;
+}
+
+.batch-placeholder p {
+  margin: 8px 0;
+  font-size: 18px;
+}
+
+.batch-placeholder p:first-child {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.batch-placeholder p:last-child {
+  color: #F85A40;
+  font-weight: 500;
+}
+
+/* Информация о загруженном файле */
+.batch-file-info {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  pointer-events: none;
+}
+
+.batch-file-icon {
+  font-size: 3rem;
+}
+
+.batch-file-details {
+  text-align: left;
+}
+
+.batch-file-name {
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin-bottom: 5px;
+}
+
+.batch-file-size {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.batch-fileInput {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  cursor: pointer;
+}
+
+/* Секция результатов */
+.batch-results-section {
+  padding: 30px 40px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.batch-results-section h3 {
+  margin: 0 0 20px 0;
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.batch-results-box {
+  flex: 1;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 12px;
+  padding: 20px;
+  overflow-y: auto;
+  min-height: 200px;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(5px);
+  margin-bottom: 20px;
+}
+
+.batch-results-list {
+  padding-left: 20px;
+  margin: 0;
+  list-style: none;
+}
+
+.batch-result-item {
+  margin-bottom: 12px;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.4;
+  padding: 8px 12px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+}
+
+.batch-empty {
+  color: rgba(255, 255, 255, 0.6);
+  font-size: 15px;
+  text-align: center;
+  padding: 40px 0;
+  font-style: italic;
+}
+
+/* Кнопки */
+.batch-buttons {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.batch-button {
+  flex: 1;
+  padding: 12px 20px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Roboto', sans-serif;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  background: linear-gradient(135deg, #F85A40 0%, #ff6b50 100%);
+  color: white;
+  box-shadow: 0 4px 15px rgba(248, 90, 64, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.batch-button:disabled {
+  background: rgba(255, 255, 255, 0.2);
+  color: rgba(255, 255, 255, 0.5);
+  cursor: not-allowed;
+  box-shadow: none;
+}
+
+.batch-button:not(:disabled)::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.batch-button:not(:disabled):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 25px rgba(248, 90, 64, 0.4);
+  background: linear-gradient(135deg, #ff6b50 0%, #F85A40 100%);
+}
+
+.batch-button:not(:disabled):hover::before {
+  left: 100%;
+}
+
+.batch-button:not(:disabled):active {
+  transform: translateY(0);
+  box-shadow: 0 4px 15px rgba(248, 90, 64, 0.3);
+}
+
+/* Ошибки */
+.batch-error {
+  color: #ff6b6b;
+  margin-top: 12px;
+  padding: 8px;
+  background: rgba(255, 107, 107, 0.1);
+  border-radius: 6px;
+  border-left: 3px solid #ff6b6b;
+  text-align: center;
+}
+
+/* ============================================ */
+/* АДАПТИВНОСТЬ ДЛЯ ВСЕХ СТРАНИЦ */
+/* ============================================ */
+
+@media (max-width: 768px) {
+  /* Адаптивность для главного меню */
+  .main-menu-card {
+    padding: 30px 20px;
+    margin: 10px;
+  }
+  
+  .main-title {
+    font-size: 1.8rem;
+  }
+  
+  .subtitle {
+    font-size: 1rem;
+  }
+  
+  .menu-button {
+    padding: 14px 20px;
+    font-size: 1rem;
+  }
+
+  /* Адаптивность для страницы обработки изображений */
+  .processing-card {
+    flex-direction: column;
+    max-width: 90%;
+  }
+  
+  .processing-right {
+    width: 100%;
+    border-right: none;
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+  }
+  
+  .processing-left {
+    border-right: none;
+  }
+  
+  .processing-dropArea {
+    min-height: 200px;
+    padding: 20px;
+  }
+  
+  .processing-placeholder p {
+    font-size: 16px;
+  }
+  
+  /* Адаптивность для страницы архивов */
+  .batch-card {
+    max-width: 90%;
+  }
+  
+  .batch-upload-section,
+  .batch-results-section {
+    padding: 30px 20px;
+  }
+  
+  .batch-title {
+    font-size: 1.8rem;
+  }
+  
+  .batch-subtitle {
+    font-size: 1rem;
+  }
+  
+  .batch-dropArea {
+    min-height: 150px;
+    padding: 20px;
+  }
+  
+  .batch-placeholder p {
+    font-size: 16px;
+  }
+  
+  .batch-buttons {
+    flex-direction: column;
+  }
+
+  /* Адаптивность для логотипа ЛЦТ */
+  .lct-logo-bottom {
+    margin-top: 30px;
+  }
+  
+  .lct-logo {
+    width: 120px; /* Размер для планшетов */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Адаптивность для главного меню */
+  .main-menu-card {
+    padding: 25px 15px;
+  }
+  
+  .main-title {
+    font-size: 1.6rem;
+  }
+  
+  .aeroflot-logo {
+    width: 100px;
+    margin-bottom: 15px;
+  }
+  
+  .aeroflot-text-logo {
+    font-size: 1.6rem;
+  }
+
+  /* Адаптивность для страницы обработки изображений */
+  .processing-app {
+    padding: 10px;
+  }
+  
+  .processing-left, .processing-right {
+    padding: 20px;
+  }
+  
+  .processing-button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  /* Адаптивность для страницы архивов на мобильных */
+  .batch-app {
+    padding: 10px;
+  }
+  
+  .batch-upload-section,
+  .batch-results-section {
+    padding: 20px 15px;
+  }
+  
+  .batch-title {
+    font-size: 1.6rem;
+  }
+  
+  .batch-button {
+    padding: 10px 16px;
+    font-size: 13px;
+  }
+  
+  .batch-file-info {
+    flex-direction: column;
+    gap: 10px;
+  }
+  
+  .batch-file-details {
+    text-align: center;
+  }
+
+  /* Адаптивность для логотипа ЛЦТ */
+  .lct-logo-bottom {
+    margin-top: 20px;
+  }
+  
+  .lct-logo {
+    width: 110px; /* Размер для мобильных */
+  }
+}

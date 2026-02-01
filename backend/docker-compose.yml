@@ -1,0 +1,90 @@
+services:
+    api:
+        build:
+            context: .
+            dockerfile: Dockerfiles/Dockerfile
+        container_name: kitmatch-api
+        command: bash -c "source /app/.venv/bin/activate && cd /app/kitmatch/src && python -m uvicorn kitmatch.main:app --host 0.0.0.0 --port 8000"
+        ports:
+            - "${API_PORT_EXTERNAL}:${API_PORT_INTERNAL}"
+        networks:
+            - kitmatch-network
+            - shared_network
+        volumes:
+            - venv-kitmatch:/app/.venv
+        env_file: 
+            - .env
+        depends_on:
+            rabbitmq:
+                condition: service_healthy
+            mongodb:
+                condition: service_healthy
+
+    rabbitmq:
+        image: rabbitmq:3-management
+        hostname: rabbit_host
+        ports:
+            - "5672:5672"
+            - "15672:15672"
+        volumes:
+            - ./rabbitmq.conf:/etc/rabbitmq/rabbitmq.conf
+        networks:
+            - kitmatch-network
+        healthcheck:
+            test: ["CMD", "rabbitmq-diagnostics", "ping"]
+            interval: 10s
+            timeout: 5s
+            retries: 5
+        labels:
+            - com.dozzle.include=true
+
+    mongodb:
+        image: mongo:latest
+        container_name: mongo_container
+        hostname: mongo_host
+        environment:
+            MONGO_INITDB_ROOT_USERNAME: root
+            MONGO_INITDB_ROOT_PASSWORD: example
+        ports:
+            - "27017:27017"
+        volumes:
+            - ./data/mongo:/data/db
+        networks:
+            - kitmatch-network
+        healthcheck:
+            test: echo 'db.runCommand("ping").ok' | mongosh localhost:27017/test --quiet
+            interval: 10s
+            timeout: 5s
+            retries: 5
+        labels:
+            - com.dozzle.include=true
+
+    dozzle:
+        image: amir20/dozzle:latest
+        container_name: dozzle
+        ports:
+            - "18080:8080"
+        volumes:
+            - /var/run/docker.sock:/var/run/docker.sock
+        networks:
+            - kitmatch-network
+
+    frontend:
+        build:
+            context: ../front  # Указываем путь к директории фронтенда
+        container_name: kitmatch-frontend
+        ports:
+            - "8080:80" # Внешний порт 8080, внутренний 80 (nginx)
+        depends_on:
+            - api
+        networks:
+            - kitmatch-network
+
+networks:
+    kitmatch-network:
+        driver: bridge
+    shared_network:
+        external: true
+
+volumes:
+    venv-kitmatch:

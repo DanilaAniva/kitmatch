@@ -1,0 +1,45 @@
+name: "yolo11"
+backend: "python"
+max_batch_size: 0
+
+input [
+  {
+    name: "image"
+    data_type: TYPE_UINT8
+    dims: [-1,-1,-1]
+  }
+]
+output [
+  {
+    name: "bboxes"
+    data_type: TYPE_STRING
+    dims: [-1]
+  }
+]
+
+parameters: {
+  key: "model_path",
+  value: { string_value: "/app/models/YOLOv11/weights/best.pt" }
+}
+
+parameters: {
+  key: "conf_threshold",
+  value: { string_value: "0.5" }
+}
+
+parameters: {
+  key: "iou_threshold",
+  value: { string_value: "0.45" }
+}
+
+parameters: {
+  key: "classes",
+  value: { string_value: "['Бокорезы', 'Ключ рожковый/накидной ¾', 'Коловорот', 'Отвертка «+»', 'Отвертка «-»', 'Отвертка на смещенный крест', 'Открывашка для банок с маслом', 'Пассатижи', 'Пассатижи контровочные', 'Разводной ключ', 'Шэрница']" }
+}
+
+instance_group [
+  {
+    count: 1
+    kind: KIND_AUTO
+  }
+]
